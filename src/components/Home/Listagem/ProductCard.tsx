@@ -1,21 +1,31 @@
 import React from "react";
 import * as s from "./styles";
+import { useNavigate } from "react-router-dom";
 
 interface ProductCardProps {
+  id: number;
   image: string;
   title: string;
   description: string;
   rating: number;
-  categories: string[]; // Mudando de category para um array de categorias
+  categories: string[];
 }
 
 const ProductCard: React.FC<ProductCardProps> = ({
+  id,
   image,
   title,
   description,
   rating,
   categories,
 }) => {
+  const navigate = useNavigate();
+
+  const handleSaibaMaisClick = () => {
+    // Navega para a página de detalhes com o ID do restaurante
+    navigate(`/restaurante/${id}`);
+  };
+
   return (
     <s.Card>
       <s.ImageWrapper>
@@ -30,7 +40,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <s.Title>{title}</s.Title>
         <s.Rating>{rating} ⭐</s.Rating>
         <s.Description>{description}</s.Description>
-        <s.Button>Saiba mais</s.Button>
+        <s.Button onClick={handleSaibaMaisClick}>Saiba Mais</s.Button>
       </s.CardContent>
     </s.Card>
   );

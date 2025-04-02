@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import logo from "../../../assets/svg/logo.svg";
 
 export const FooterContainer = styled.footer`
   background-color: #ffe8d6;
