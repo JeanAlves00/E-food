@@ -17,7 +17,7 @@ export const products = [
     description:
       "Pizzas artesanais e massas suculentas, preparadas com ingredientes selecionados e receitas de família. Sinta o sabor marcante e as porções expandidas de sabor que encantam e celebram cada momento à mesa.",
     rating: 4.7,
-    categories: ["Culinária Italiana", "Massas & Pizzas"],
+    categories: ["Culinária Italiana"],
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const products = [
     description:
       "Autêntica comida mexicana com temperos tradicionais e ingredientes frescos. Experimente nossos tacos, burritos e guacamole caseiro que transportam você diretamente para as ruas de Cidade do México.",
     rating: 4.8,
-    categories: ["Mexicana", "Picante"],
+    categories: ["Mexicana"],
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const products = [
     description:
       "O melhor da culinária brasileira com carnes nobres selecionadas e grelhadas no ponto perfeito. Buffet completo com acompanhamentos típicos e sobremesas caseiras que completam a experiência gastronômica.",
     rating: 4.6,
-    categories: ["Brasileira", "Churrascaria"],
+    categories: ["Brasileira"],
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const products = [
     description:
       "Delícias da culinária árabe preparadas com especiarias importadas e técnicas tradicionais. Do kafta ao kibbe, cada prato é uma viagem pelos sabores do Oriente Médio com toques contemporâneos.",
     rating: 4.5,
-    categories: ["Árabe", "Comida Saudável"],
+    categories: ["Árabe"],
   },
   {
     id: 6,
@@ -53,6 +53,6 @@ export const products = [
     description:
       "Restaurante especializado em pratos veganos e vegetarianos com ingredientes orgânicos e de produtores locais. Combinações criativas e nutritivas que provam que comida saudável também é saborosa e satisfatória.",
     rating: 4.4,
-    categories: ["Vegana", "Orgânica"],
+    categories: ["Vegana"],
   },
 ];

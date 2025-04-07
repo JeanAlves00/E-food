@@ -37,10 +37,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </s.CategoriesContainer>
       </s.ImageWrapper>
       <s.CardContent>
-        <s.Title>{title}</s.Title>
-        <s.Rating>{rating} ⭐</s.Rating>
+        <s.HeaderContainer>
+          <s.Title>{title}</s.Title>
+          <s.Rating>{rating} ⭐</s.Rating>
+        </s.HeaderContainer>
         <s.Description>{description}</s.Description>
-        <s.Button onClick={handleSaibaMaisClick}>Saiba Mais</s.Button>
+        <s.CardFooter>
+          <button onClick={handleSaibaMaisClick}>Saiba Mais</button>
+        </s.CardFooter>
       </s.CardContent>
     </s.Card>
   );

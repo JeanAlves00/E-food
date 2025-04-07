@@ -1,88 +1,116 @@
 import styled from "styled-components";
 
 export const GridContainer = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
-  padding: 60px;
-  max-width: 1200px;
-  margin: auto;
-
-  @media (max-width: 768px) {
-    grid-template-columns: 1fr;
-    padding: 30px;
-  }
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+  background-color: #fff5f0;
+  margin-top: 24px;
 `;
 
 export const Card = styled.div`
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(255, 0, 0, 0.7);
-  transition: transform 0.2s ease;
+  background-color: #fff;
+  border: 1px solid #e66767;
+  width: 472;
+  height: 398;
+  top: 440px;
+  left: 171px;
+  border-width: 1px;
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
+  height: 200px;
+  margin: -1px;
+  margin-bottom: 0;
+  overflow: hidden;
 `;
 
 export const Image = styled.img`
   width: 100%;
-  height: 230px;
+  height: 100%;
   object-fit: cover;
 `;
 
 export const CategoriesContainer = styled.div`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 0.5rem;
+  right: 0.5rem;
   display: flex;
-  gap: 5px;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  max-width: calc(100% - 1rem);
 `;
 
 export const Category = styled.span`
-  background: #d9392b;
-  color: white;
-  font-size: 0.8rem;
-  padding: 5px 10px;
-  border-radius: 5px;
+  background-color: #e66767;
+  font-family: "roboto", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  font-size: 12px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  text-align: center;
 `;
 
 export const CardContent = styled.div`
-  padding: 15px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  flex-grow: 1;
+  height: calc(100% - 200px);
+`;
+
+export const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
 `;
 
 export const Title = styled.h3`
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  margin: 0;
   color: #e66767;
-  margin-bottom: 5px;
+  font-weight: bold;
 `;
 
 export const Rating = styled.div`
-  font-size: 1rem;
-  color: #ff9800;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: #e66767;
+  display: flex;
+  align-items: center;
 `;
 
 export const Description = styled.p`
-  font-size: 0.9rem;
   color: #e66767;
-  margin-bottom: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0%;
+
+  flex: 1;
 `;
 
-export const Button = styled.button`
-  background: #d9392b;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: 0.2s;
+export const CardFooter = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  margin-top: auto;
 
-  &:hover {
-    background: #b32b21;
+  button {
+    margin-top: 8px;
+    background-color: #e66767;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
   }
 `;
