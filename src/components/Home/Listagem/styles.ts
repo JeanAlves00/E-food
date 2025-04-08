@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { cores } from "../../../styles/GlobalStyles";
 
 export const GridContainer = styled.div`
   max-width: 1024px;
@@ -7,13 +8,12 @@ export const GridContainer = styled.div`
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
   padding: 1rem;
-  background-color: #fff5f0;
   margin-top: 24px;
 `;
 
 export const Card = styled.div`
-  background-color: #fff;
-  border: 1px solid #e66767;
+  background-color: ${cores.branco};
+  border: 1px solid ${cores.vermelho};
   width: 472;
   height: 398;
   top: 440px;
@@ -46,9 +46,9 @@ export const CategoriesContainer = styled.div`
 `;
 
 export const Category = styled.span`
-  background-color: #e66767;
+  background-color: ${cores.vermelho};
   font-family: "roboto", sans-serif;
-  color: #fff;
+  color: ${cores.branco};
   font-weight: bold;
   padding: 0.5rem 1rem;
   font-size: 12px;
@@ -76,19 +76,19 @@ export const HeaderContainer = styled.div`
 export const Title = styled.h3`
   font-size: 1.1rem;
   margin: 0;
-  color: #e66767;
+  color: ${cores.vermelho};
   font-weight: bold;
 `;
 
 export const Rating = styled.div`
   font-weight: bold;
-  color: #e66767;
+  color: ${cores.vermelho};
   display: flex;
   align-items: center;
 `;
 
 export const Description = styled.p`
-  color: #e66767;
+  color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -105,8 +105,8 @@ export const CardFooter = styled.div`
 
   button {
     margin-top: 8px;
-    background-color: #e66767;
-    color: #fff;
+    background-color: ${cores.vermelho};
+    color: ${cores.branco};
     font-weight: bold;
     border: none;
     padding: 0.5rem 1.2rem;

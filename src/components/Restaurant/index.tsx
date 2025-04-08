@@ -12,9 +12,7 @@ import logo from "../../assets/svg/logo.svg";
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
-  const [cart, setCart] = useState<{ product: Product; quantity: number }[]>(
-    []
-  );
+  const [cart] = useState<{ product: Product; quantity: number }[]>([]);
   const [loading, setLoading] = useState(true);
 
   // Simulando busca de dados do restaurante usando o ID
@@ -34,27 +32,6 @@ const RestaurantDetails: React.FC = () => {
 
     return () => clearTimeout(timer);
   }, [id]);
-
-  const addToCart = (product: Product) => {
-    setCart((prevCart) => {
-      // Verifica se o produto já está no carrinho
-      const existingProduct = prevCart.find(
-        (item) => item.product.id === product.id
-      );
-
-      if (existingProduct) {
-        // Incrementa a quantidade se o produto já existir
-        return prevCart.map((item) =>
-          item.product.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
-      } else {
-        // Adiciona novo produto com quantidade 1
-        return [...prevCart, { product, quantity: 1 }];
-      }
-    });
-  };
 
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
@@ -82,8 +59,8 @@ const RestaurantDetails: React.FC = () => {
       <S.Banner>
         <S.BannerImage src={restaurant.image} alt={restaurant.name} />
         <S.RestaurantInfo>
-          <S.Title>{restaurant.name}</S.Title>
           <S.Type>{restaurant.type}</S.Type>
+          <S.Title>{restaurant.name}</S.Title>
         </S.RestaurantInfo>
       </S.Banner>
 
@@ -95,9 +72,7 @@ const RestaurantDetails: React.FC = () => {
               <S.ProductTitle>{product.name}</S.ProductTitle>
               <S.ProductDescription>{product.description}</S.ProductDescription>
               <S.ProductPrice>R$ {product.price.toFixed(2)}</S.ProductPrice>
-              <S.AddToCartButton onClick={() => addToCart(product)}>
-                Adicionar ao carrinho
-              </S.AddToCartButton>
+              <S.AddToCartButton>Adicionar ao carrinho</S.AddToCartButton>
             </S.ProductInfo>
           </S.ProductCard>
         ))}

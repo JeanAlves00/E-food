@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { cores } from "../../styles/GlobalStyles";
 
 export const FooterContainer = styled.footer`
   margin-top: 60px;
-  background-color: #ffe8d6;
+  background-color: ${cores.pele};
   padding: 40px 20px;
   text-align: center;
 `;
@@ -10,7 +11,7 @@ export const FooterContainer = styled.footer`
 export const Logo = styled.h1`
   font-size: 2rem;
   font-weight: bold;
-  color: #d9392b;
+  color: ${cores.vermelho};
   display: inline-block;
   padding: 10px 20px;
   border-radius: 10px;
@@ -26,18 +27,19 @@ export const SocialIcons = styled.div`
 
 export const Icon = styled.a`
   font-size: 1.5rem;
-  color: #d9392b;
+  color: ${cores.vermelho};
   transition: 0.3s;
 
   &:hover {
-    color: #b32b21;
+    color: ${cores.vermelho};
+    opacity: 0.8;
     transform: scale(1.1);
   }
 `;
 
 export const FooterText = styled.p`
   font-size: 0.9rem;
-  color: #d9392b;
+  color: ${cores.vermelho};
   max-width: 600px;
   margin: auto;
   line-height: 1.5;

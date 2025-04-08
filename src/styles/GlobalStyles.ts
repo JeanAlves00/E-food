@@ -8,18 +8,17 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #fff5f2;
     color: #333;
   }
-
-  a {
-    text-decoration: none;
-  }
-
-  button {
-    cursor: pointer;
-  }
 `;
+
+export const cores = {
+  vermelho: "#E66767",
+  pele: "#FFEBD9",
+  branco: "#FFFFFF",
+  amarelo: "#FFB930",
+};
 
 export default GlobalStyle;

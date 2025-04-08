@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import header from "../../assets/images/Header.png";
+import { cores } from "../../styles/GlobalStyles";
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -13,9 +14,24 @@ export const Header = styled.header`
   align-items: center;
   padding: 20px 40px;
   background: url(${header});
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 15px;
+  }
 `;
+
 export const LogoImage = styled.img`
   width: 100px;
+
+  @media (max-width: 768px) {
+    order: -1;
+  }
 `;
 
 export const BackButton = styled(Link)`
@@ -25,25 +41,12 @@ export const BackButton = styled(Link)`
   font-weight: bold;
   text-decoration: none;
   font-size: 16px;
-  &:hover {
-    text-decoration: underline;
-  }
 `;
 
 export const CartCounter = styled.div`
-  background: #d9534f;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-
-  &:hover {
-    background: #b52b27;
-  }
+  color: ${cores.vermelho};
+  font-size: 14px;
+  font-weight: 600;
 `;
 
 export const Banner = styled.div`
@@ -51,32 +54,82 @@ export const Banner = styled.div`
   height: 300px;
   position: relative;
   background-size: cover;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    height: 250px;
+  }
+
+  @media (max-width: 480px) {
+    height: 200px;
+  }
 `;
 
 export const BannerImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
+export const Type = styled.p`
+  font-size: 18px;
+  margin-bottom: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  @media (max-width: 768px) {
+    margin-bottom: 100px;
+    font-size: 16px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 70px;
+    font-size: 14px;
+  }
 `;
 
 export const RestaurantInfo = styled.div`
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 20px;
+  color: ${cores.branco};
+  padding: 50px 120px;
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+  z-index: 1;
+  text-align: left;
+
+  @media (max-width: 1024px) {
+    padding: 50px 80px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px 60px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 30px;
+  }
 `;
 
 export const Title = styled.h1`
   font-size: 28px;
   margin-bottom: 8px;
   font-weight: bold;
-`;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 
-export const Type = styled.p`
-  font-size: 16px;
+  @media (max-width: 768px) {
+    font-size: 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 20px;
+  }
 `;
 
 export const ProductsGrid = styled.div`
@@ -86,27 +139,43 @@ export const ProductsGrid = styled.div`
   padding: 60px;
   max-width: 1200px;
   margin: auto;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 40px;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 30px;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
 `;
 
 export const ProductCard = styled.div`
-  background: #ffe5d9;
-  border: 2px solid #f5b5a1;
+  background: ${cores.vermelho};
+  border: 8px solid ${cores.vermelho};
   grid-template-columns: repeat(2, 1fr);
-  border-radius: 8px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   transition: transform 0.2s;
-
-  &:hover {
-    transform: scale(1.03);
-  }
 `;
 
 export const ProductImage = styled.img`
-  width: 100%;
-  height: 200px;
+  height: 167px;
   object-fit: cover;
+
+  @media (max-width: 480px) {
+    height: 140px;
+  }
 `;
 
 export const ProductInfo = styled.div`
@@ -114,41 +183,59 @@ export const ProductInfo = styled.div`
   flex-grow: 1;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 480px) {
+    padding: 12px;
+  }
 `;
 
 export const ProductTitle = styled.h3`
   font-size: 18px;
-  color: #d9534f;
+  color: ${cores.pele};
   margin-bottom: 8px;
   font-weight: bold;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
 `;
 
 export const ProductDescription = styled.p`
   font-size: 14px;
-  color: #333;
+  color: ${cores.pele};
   margin-bottom: 10px;
   flex-grow: 1;
+
+  @media (max-width: 480px) {
+    font-size: 13px;
+  }
 `;
 
 export const ProductPrice = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  color: #d9534f;
+  color: ${cores.pele};
   margin-bottom: 12px;
+  display: none;
 `;
 
 export const AddToCartButton = styled.button`
-  background: #d9534f;
-  color: white;
+  background: ${cores.pele};
+  color: ${cores.vermelho};
   border: none;
-  border-radius: 4px;
-  padding: 10px 16px;
+  padding: 8px 0;
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
+  width: 100%;
   transition: background 0.2s;
 
   &:hover {
-    background: #b52b27;
+    background: #f8e0c5;
+  }
+
+  @media (max-width: 480px) {
+    padding: 6px 0;
+    font-size: 13px;
   }
 `;
