@@ -5,7 +5,6 @@ import { cores } from "../../styles/GlobalStyles";
 
 export const Container = styled.div`
   margin: 0 auto;
-  background: #fdf3e7;
 `;
 
 export const Header = styled.header`
@@ -37,7 +36,7 @@ export const LogoImage = styled.img`
 export const BackButton = styled(Link)`
   display: flex;
   align-items: center;
-  color: #d9534f;
+  color: ${cores.vermelho};
   font-weight: bold;
   text-decoration: none;
   font-size: 16px;
@@ -229,10 +228,6 @@ export const AddToCartButton = styled.button`
   cursor: pointer;
   width: 100%;
   transition: background 0.2s;
-
-  &:hover {
-    background: #f8e0c5;
-  }
 
   @media (max-width: 480px) {
     padding: 6px 0;
