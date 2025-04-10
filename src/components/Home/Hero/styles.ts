@@ -50,7 +50,7 @@ export const Logo = styled.img`
 
 export const Title = styled.h1`
   position: absolute;
-
+  width: 539px;
   height: 84px;
   left: 50%;
   top: 236px;

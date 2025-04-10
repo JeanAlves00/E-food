@@ -1,20 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as S from "./styles";
-import { FaShoppingCart, FaArrowLeft } from "react-icons/fa";
 import {
   Restaurant,
   Product,
   restaurantsDatabase,
 } from "../../data/restaurantsPages";
-import logo from "../../assets/svg/logo.svg";
+import Header from "./Header";
+import Banner from "./Banner";
+import ProductsGrid from "./ProductsGrid";
 
+/**
+ * Componente principal que exibe os detalhes de um restaurante
+ * incluindo cabeçalho, banner e lista de produtos
+ */
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
   const [cart] = useState<{ product: Product; quantity: number }[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Carrega os dados do restaurante quando o ID muda
   useEffect(() => {
     const timer = setTimeout(() => {
       const restaurantId = parseInt(id || "1");
@@ -41,38 +47,9 @@ const RestaurantDetails: React.FC = () => {
 
   return (
     <S.Container>
-      <S.Header>
-        <S.BackButton to="/">
-          <FaArrowLeft style={{ marginRight: "8px" }} />
-          Restaurantes
-        </S.BackButton>
-        <S.LogoImage src={logo} alt="Logo" />
-        <S.CartCounter>
-          <FaShoppingCart /> {totalItems} item(ns) no carrinho
-        </S.CartCounter>
-      </S.Header>
-
-      <S.Banner>
-        <S.BannerImage src={restaurant.image} alt={restaurant.name} />
-        <S.RestaurantInfo>
-          <S.Type>{restaurant.type}</S.Type>
-          <S.Title>{restaurant.name}</S.Title>
-        </S.RestaurantInfo>
-      </S.Banner>
-
-      <S.ProductsGrid>
-        {restaurant.products.map((product) => (
-          <S.ProductCard key={product.id}>
-            <S.ProductImage src={product.image} alt={product.name} />
-            <S.ProductInfo>
-              <S.ProductTitle>{product.name}</S.ProductTitle>
-              <S.ProductDescription>{product.description}</S.ProductDescription>
-              <S.ProductPrice>R$ {product.price.toFixed(2)}</S.ProductPrice>
-              <S.AddToCartButton>Adicionar ao carrinho</S.AddToCartButton>
-            </S.ProductInfo>
-          </S.ProductCard>
-        ))}
-      </S.ProductsGrid>
+      <Header totalItems={totalItems} />
+      <Banner restaurant={restaurant} />
+      <ProductsGrid products={restaurant.products} />
     </S.Container>
   );
 };
