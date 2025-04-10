@@ -14,7 +14,7 @@ export interface Product {
   image: string;
 }
 
-// Banco de dados simulado com vários restaurantes
+// Banco de dados simulado com vários restaurantes e produtos
 export const restaurantsDatabase: Restaurant[] = [
   {
     id: 1,

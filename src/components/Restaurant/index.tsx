@@ -15,17 +15,13 @@ const RestaurantDetails: React.FC = () => {
   const [cart] = useState<{ product: Product; quantity: number }[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Simulando busca de dados do restaurante usando o ID
   useEffect(() => {
-    // Simulando um delay de carregamento
     const timer = setTimeout(() => {
-      // Convertendo o ID da URL para número e buscando no banco de dados simulado
       const restaurantId = parseInt(id || "1");
       const foundRestaurant = restaurantsDatabase.find(
         (r) => r.id === restaurantId
       );
 
-      // Se não encontrar o restaurante com o ID fornecido, usa o primeiro como fallback
       setRestaurant(foundRestaurant || restaurantsDatabase[0]);
       setLoading(false);
     }, 500);

@@ -22,7 +22,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const navigate = useNavigate();
 
   const handleSaibaMaisClick = () => {
-    // Navega para a página de detalhes com o ID do restaurante
     navigate(`/restaurante/${id}`);
   };
 
