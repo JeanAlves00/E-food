@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as S from "./styles";
 import {
@@ -10,17 +10,12 @@ import Header from "./Header";
 import Banner from "./Banner";
 import ProductsGrid from "./ProductsGrid";
 
-/**
- * Componente principal que exibe os detalhes de um restaurante
- * incluindo cabeçalho, banner e lista de produtos
- */
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
   const [cart] = useState<{ product: Product; quantity: number }[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Carrega os dados do restaurante quando o ID muda
   useEffect(() => {
     const timer = setTimeout(() => {
       const restaurantId = parseInt(id || "1");

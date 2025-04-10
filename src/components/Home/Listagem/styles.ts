@@ -9,6 +9,7 @@ export const GridContainer = styled.div`
   gap: 80px 32px;
   padding: 0 8px;
   margin-top: 80px;
+  margin-bottom: 80px;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);

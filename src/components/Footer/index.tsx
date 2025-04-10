@@ -7,16 +7,16 @@ const Footer: React.FC = () => {
   return (
     <s.FooterContainer>
       <s.Logo>
-        <img src={logo} alt="efood Logo" height="40" />
+        <img src={logo} alt="efood Logo" />
       </s.Logo>
       <s.SocialIcons>
-        <s.Icon href="#">
+        <s.Icon href="#" aria-label="Instagram">
           <FaInstagram />
         </s.Icon>
-        <s.Icon href="#">
+        <s.Icon href="#" aria-label="Facebook">
           <FaFacebookF />
         </s.Icon>
-        <s.Icon href="#">
+        <s.Icon href="#" aria-label="Twitter">
           <FaTwitter />
         </s.Icon>
       </s.SocialIcons>

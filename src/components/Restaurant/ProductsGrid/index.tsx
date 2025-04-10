@@ -1,4 +1,3 @@
-import React from "react";
 import * as S from "./styles";
 import { Product } from "../../../data/restaurantsPages";
 
@@ -7,10 +6,6 @@ interface ProductsGridProps {
 }
 
 const ProductsGrid: React.FC<ProductsGridProps> = ({ products }) => {
-  const handleAddToCart = (product: Product) => {
-    console.log(`Produto adicionado: ${product.name}`);
-  };
-
   return (
     <S.ProductsGrid>
       {products.map((product) => (
@@ -20,12 +15,7 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({ products }) => {
             <S.ProductTitle>{product.name}</S.ProductTitle>
             <S.ProductDescription>{product.description}</S.ProductDescription>
             <S.ProductPrice>R$ {product.price.toFixed(2)}</S.ProductPrice>
-            <S.AddToCartButton
-              onClick={() => handleAddToCart(product)}
-              aria-label={`Adicionar ${product.name} ao carrinho`}
-            >
-              Adicionar ao carrinho
-            </S.AddToCartButton>
+            <S.AddToCartButton>Saiba mais</S.AddToCartButton>
           </S.ProductInfo>
         </S.ProductCard>
       ))}

@@ -4,80 +4,81 @@ import { cores } from "../../../styles/GlobalStyles";
 export const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 60px;
-  padding: 60px;
-  max-width: 1200px;
-  margin: auto;
+  gap: 32px;
+  padding: 40px 0;
+  max-width: 1024px;
+  margin: 0 auto;
 
   @media (max-width: 1024px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    padding: 40px;
+    gap: 24px;
+    padding: 30px 20px;
   }
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding: 30px;
+    gap: 20px;
   }
 
   @media (max-width: 480px) {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
     padding: 20px;
   }
 `;
 
 export const ProductCard = styled.div`
   background: ${cores.vermelho};
-  border: 8px solid ${cores.vermelho};
-  grid-template-columns: repeat(2, 1fr);
+  width: 320px;
+  height: 338px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s;
+  margin: 0 auto;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 export const ProductImage = styled.img`
+  width: 304px;
   height: 167px;
   object-fit: cover;
+  margin: 8px 8px 0;
 
-  @media (max-width: 480px) {
-    height: 140px;
+  @media (max-width: 1024px) {
+    width: calc(100% - 16px);
   }
 `;
 
 export const ProductInfo = styled.div`
-  padding: 16px;
+  padding: 8px;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: 480px) {
-    padding: 12px;
-  }
 `;
 
 export const ProductTitle = styled.h3`
-  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 16px;
+  line-height: 19px;
   color: ${cores.pele};
   margin-bottom: 8px;
-  font-weight: bold;
-
-  @media (max-width: 480px) {
-    font-size: 16px;
-  }
 `;
 
 export const ProductDescription = styled.p`
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
+  line-height: 22px;
   color: ${cores.pele};
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   flex-grow: 1;
-
-  @media (max-width: 480px) {
-    font-size: 13px;
-  }
 `;
 
 export const ProductPrice = styled.p`
@@ -92,15 +93,19 @@ export const AddToCartButton = styled.button`
   background: ${cores.pele};
   color: ${cores.vermelho};
   border: none;
-  padding: 8px 0;
+  height: 24px;
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 14px;
-  font-weight: bold;
+  line-height: 16px;
+  text-align: center;
   cursor: pointer;
-  width: 100%;
+  width: 304px;
+  margin: 0 auto;
   transition: background 0.2s;
 
-  @media (max-width: 480px) {
-    padding: 6px 0;
-    font-size: 13px;
+  @media (max-width: 1024px) {
+    width: 100%;
   }
 `;
