@@ -44,7 +44,6 @@ export const Logo = styled.img`
 `;
 
 export const Title = styled.h1`
-  width: 100%;
   max-width: 540px;
   margin-top: 120px;
   font-family: "Roboto", sans-serif;
