@@ -6,13 +6,15 @@ import { cores } from "../../../styles/GlobalStyles";
 export const Header = styled.header`
   width: 100%;
   height: 186px;
-  left: 0px;
-  top: -23px;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background: url(${header});
+  background-image: url(${header});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
   &::before {
     content: "";
@@ -22,11 +24,12 @@ export const Header = styled.header`
     width: 100%;
     height: 100%;
     background: rgba(230, 103, 103, 0.05);
-    z-index: -1;
+    z-index: 1;
   }
 
   @media (max-width: 768px) {
     height: auto;
+    min-height: 186px;
     flex-direction: column;
     gap: 10px;
     padding: 15px 20px;
@@ -46,6 +49,7 @@ export const LogoImage = styled.img`
   left: 50%;
   transform: translateX(-50%);
   top: 40px;
+  z-index: 2;
 
   @media (max-width: 768px) {
     position: relative;
@@ -69,6 +73,7 @@ export const BackButton = styled(Link)`
   line-height: 21px;
   text-align: center;
   text-decoration: none;
+  z-index: 2;
 
   @media (max-width: 768px) {
     position: relative;
@@ -88,6 +93,7 @@ export const CartCounter = styled.div`
   font-size: 18px;
   line-height: 21px;
   text-align: right;
+  z-index: 2;
 
   span {
     margin-left: 8px;
