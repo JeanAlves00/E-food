@@ -44,7 +44,7 @@ export const RestaurantInfo = styled.div`
 
 export const Type = styled.p`
   margin-left: 170px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 100;
   font-size: 32px;
@@ -61,7 +61,7 @@ export const Type = styled.p`
 export const Title = styled.h1`
   max-width: 676px;
   margin-left: 170px;
-  font-family: "Roboto";
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 900;
   font-size: 32px;
