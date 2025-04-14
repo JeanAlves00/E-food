@@ -14,8 +14,7 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({ products }) => {
           <S.ProductInfo>
             <S.ProductTitle>{product.name}</S.ProductTitle>
             <S.ProductDescription>{product.description}</S.ProductDescription>
-            <S.ProductPrice>R$ {product.price.toFixed(2)}</S.ProductPrice>
-            <S.AddToCartButton>Saiba mais</S.AddToCartButton>
+            <S.AddToCartButton>Adicionar ao carrinho</S.AddToCartButton>
           </S.ProductInfo>
         </S.ProductCard>
       ))}

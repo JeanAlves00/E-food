@@ -6,20 +6,15 @@ export const GridContainer = styled.div`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 80px 32px;
+  gap: 48px 32px;
   padding: 0 8px;
   margin-top: 80px;
   margin-bottom: 80px;
 
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 48px 24px;
-    padding: 0 16px;
-  }
-
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: 32px;
+    padding: 0 16px;
   }
 `;
 
@@ -75,6 +70,10 @@ export const Category = styled.span`
   height: 26px;
 `;
 
+export const HighlightCategory = styled(Category)`
+  width: 121px;
+`;
+
 export const CardContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -118,6 +117,11 @@ export const Rating = styled.div`
   line-height: 21px;
   font-family: "Roboto", sans-serif;
   gap: 8px;
+
+  img {
+    width: 21px;
+    height: 21px;
+  }
 `;
 
 export const Description = styled.p`
@@ -149,7 +153,6 @@ export const CardFooter = styled.div`
     color: ${cores.branco};
     font-size: 14px;
     font-family: "Roboto", sans-serif;
-    font-size: 14px;
     line-height: 16px;
     border: none;
     padding: 4px 0;

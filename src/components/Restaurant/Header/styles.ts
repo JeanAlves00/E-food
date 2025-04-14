@@ -15,6 +15,7 @@ export const Header = styled.header`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-color: rgba(230, 103, 103, 0.05);
 
   &::before {
     content: "";
@@ -50,6 +51,7 @@ export const LogoImage = styled.img`
   transform: translateX(-50%);
   top: 40px;
   z-index: 2;
+  background-color: ${cores.vermelho};
 
   @media (max-width: 768px) {
     position: relative;
@@ -94,9 +96,9 @@ export const CartCounter = styled.div`
   line-height: 21px;
   text-align: right;
   z-index: 2;
+  width: 256px;
 
   span {
-    margin-left: 8px;
     font-family: "Roboto", sans-serif;
     font-weight: 900;
     font-size: 18px;

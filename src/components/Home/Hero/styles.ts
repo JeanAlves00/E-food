@@ -1,14 +1,14 @@
 import styled from "styled-components";
-import Hero from "../../../assets/images/Hero.png";
+import HeroBackground from "../../../assets/images/Hero.png";
+import { cores } from "../../../styles/GlobalStyles";
 
 export const HeroContainer = styled.section`
   width: 100%;
-  height: 384px;
+  height: 360px;
   position: relative;
-  background-image: url("${Hero}");
+  background-image: url("${HeroBackground}");
   background-size: cover;
   background-position: center;
-  background-color: rgba(230, 103, 103, 0.05);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,16 +30,11 @@ export const HeroContainer = styled.section`
 export const Logo = styled.img`
   width: 125px;
   height: 57.5px;
-  background: #e66767;
+  background: ${cores.vermelho};
 
   @media (max-width: 768px) {
     width: 100px;
     height: 46px;
-  }
-
-  @media (max-width: 480px) {
-    width: 80px;
-    height: 36.8px;
   }
 `;
 
@@ -51,17 +46,11 @@ export const Title = styled.h1`
   font-size: 36px;
   line-height: 42px;
   text-align: center;
-  color: #e66767;
+  color: ${cores.vermelho};
 
   @media (max-width: 768px) {
     margin-top: 80px;
     font-size: 28px;
     line-height: 32px;
-  }
-
-  @media (max-width: 480px) {
-    margin-top: 60px;
-    font-size: 24px;
-    line-height: 28px;
   }
 `;

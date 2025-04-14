@@ -5,11 +5,12 @@ export const ProductsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
-  padding: 40px 0;
-  max-width: 1024px;
+  width: 1024px;
   margin: 0 auto;
+  padding: 40px 0;
 
   @media (max-width: 1024px) {
+    width: 100%;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     padding: 30px 20px;
@@ -30,15 +31,17 @@ export const ProductsGrid = styled.div`
 export const ProductCard = styled.div`
   background: ${cores.vermelho};
   width: 320px;
-  height: 338px;
+  height: 320px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  position: relative;
 
   @media (max-width: 1024px) {
     width: 100%;
     height: auto;
+    min-height: 320px;
   }
 `;
 
@@ -79,14 +82,7 @@ export const ProductDescription = styled.p`
   color: ${cores.pele};
   margin-bottom: 8px;
   flex-grow: 1;
-`;
-
-export const ProductPrice = styled.p`
-  font-size: 16px;
-  font-weight: bold;
-  color: ${cores.pele};
-  margin-bottom: 12px;
-  display: none;
+  overflow: hidden;
 `;
 
 export const AddToCartButton = styled.button`
@@ -94,6 +90,7 @@ export const AddToCartButton = styled.button`
   color: ${cores.vermelho};
   border: none;
   height: 24px;
+  width: 304px;
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -101,9 +98,7 @@ export const AddToCartButton = styled.button`
   line-height: 16px;
   text-align: center;
   cursor: pointer;
-  width: 304px;
   margin: 0 auto;
-  transition: background 0.2s;
 
   @media (max-width: 1024px) {
     width: 100%;

@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { cores } from "../../../styles/GlobalStyles";
 
 export const Banner = styled.div`
+  display: flex;
   position: relative;
   width: 100%;
   height: 280px;
-  margin: 0 auto;
-  overflow: hidden;
+  z-index: 10;
 
   @media (max-width: 768px) {
     height: 200px;

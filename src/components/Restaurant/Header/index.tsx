@@ -5,7 +5,7 @@ interface HeaderProps {
   totalItems: number;
 }
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC<HeaderProps> = ({ totalItems = 0 }) => {
   return (
     <S.Header>
       <S.BackButton to="/">Restaurantes</S.BackButton>
@@ -13,7 +13,7 @@ const Header: React.FC<HeaderProps> = () => {
       <S.LogoImage src={logo} alt="Logo E-food" />
 
       <S.CartCounter>
-        <span> 0 produtos no carrinho</span>
+        <span>{totalItems} produto(s) no carrinho</span>
       </S.CartCounter>
     </S.Header>
   );

@@ -1,69 +1,50 @@
 import styled from "styled-components";
+import { cores } from "../../styles/GlobalStyles";
 
 export const FooterContainer = styled.footer`
+  background-color: #ffebd8;
   width: 100%;
-  min-height: 298px;
-  background: #ffebd9;
-  margin: 0 auto;
+  height: 298px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 40px 16px;
-  box-sizing: border-box;
+  justify-content: center;
+  padding: 40px 0;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.img`
   width: 125px;
   height: 57.5px;
   margin-bottom: 32px;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (max-width: 768px) {
-    width: 100px;
-    height: 46px;
-  }
-
-  @media (max-width: 480px) {
-    width: 80px;
-    height: 36.8px;
-  }
 `;
 
-export const SocialIcons = styled.div`
+export const SocialMediaContainer = styled.div`
   display: flex;
-  justify-content: center;
   gap: 8px;
-  margin-bottom: 32px;
+  margin-bottom: 80px;
 `;
 
-export const Icon = styled.a`
+export const IconWrapper = styled.div`
   width: 24px;
   height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e66767;
-  font-size: 20px;
+  color: ${cores.vermelho};
+  font-size: 24px;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
-export const FooterText = styled.p`
-  max-width: 480px;
-  width: 100%;
+export const Disclaimer = styled.p`
+  color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: 400;
   font-size: 10px;
-  line-height: 12px;
+  font-weight: 400;
   text-align: center;
-  color: #e66767;
-
-  @media (max-width: 480px) {
-    font-size: 9px;
-    line-height: 11px;
-  }
+  max-width: 480px;
+  line-height: 1.5;
 `;
