@@ -43,9 +43,7 @@ export const RestaurantInfo = styled.div`
 `;
 
 export const Type = styled.p`
-  margin-left: calc(
-    (100% - 1024px) / 2
-  ); // Alinhe com a borda esquerda dos Cards
+  margin-left: calc((100% - 1024px) / 2);
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 100;
@@ -62,9 +60,7 @@ export const Type = styled.p`
 
 export const Title = styled.h1`
   max-width: 676px;
-  margin-left: calc(
-    (100% - 1024px) / 2
-  ); // Alinhe com a borda esquerda dos Cards
+  margin-left: calc((100% - 1024px) / 2);
   font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 900;

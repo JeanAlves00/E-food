@@ -65,7 +65,7 @@ export const LogoImage = styled.img`
 
 export const BackButton = styled(Link)`
   position: absolute;
-  left: calc((100% - 1024px) / 2); // Alinhe com a borda esquerda dos Cards
+  left: calc((100% - 1024px) / 2);
   top: 59px;
   color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
@@ -86,7 +86,7 @@ export const BackButton = styled(Link)`
 
 export const CartCounter = styled.div`
   position: absolute;
-  right: calc((100% - 1024px) / 2); // Alinhe com a borda direita dos Cards
+  right: calc((100% - 1024px) / 2);
   top: 59px;
   color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
