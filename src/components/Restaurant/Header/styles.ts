@@ -10,7 +10,7 @@ export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px calc((100% - 1024px) / 2); // Alinhe com a largura dos Cards
   background-image: url(${header});
   background-size: cover;
   background-position: center;
@@ -65,7 +65,7 @@ export const LogoImage = styled.img`
 
 export const BackButton = styled(Link)`
   position: absolute;
-  left: 171px;
+  left: calc((100% - 1024px) / 2); // Alinhe com a borda esquerda dos Cards
   top: 59px;
   color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
@@ -86,7 +86,7 @@ export const BackButton = styled(Link)`
 
 export const CartCounter = styled.div`
   position: absolute;
-  right: 171px;
+  right: calc((100% - 1024px) / 2); // Alinhe com a borda direita dos Cards
   top: 59px;
   color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
@@ -96,7 +96,7 @@ export const CartCounter = styled.div`
   line-height: 21px;
   text-align: right;
   z-index: 2;
-  width: 256px;
+  width: auto;
 
   span {
     font-family: "Roboto", sans-serif;
