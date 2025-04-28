@@ -44,7 +44,6 @@ export const ProductCard = styled.div`
     min-height: 320px;
   }
 `;
-
 export const ProductImage = styled.img`
   width: 304px;
   height: 167px;

@@ -1,25 +1,16 @@
 import * as s from "./styles";
 import { useNavigate } from "react-router-dom";
-import Star from "../../../assets/svg/star.svg"; // Você precisará adicionar este ícone
+import Star from "../../../assets/svg/star.svg";
+import { Restaurant } from "../../../services/api";
 
-interface ProductCardProps {
-  id: number;
-  image: string;
-  title: string;
-  description: string;
-  rating: number;
-  categories: string[];
-  isHighlighted?: boolean;
-}
-
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductCard: React.FC<Restaurant> = ({
   id,
-  image,
-  title,
-  description,
-  rating,
-  categories,
-  isHighlighted = false,
+  capa,
+  titulo,
+  avaliacao,
+  descricao,
+  tipo,
+  destacado,
 }) => {
   const navigate = useNavigate();
 
@@ -30,25 +21,23 @@ const ProductCard: React.FC<ProductCardProps> = ({
   return (
     <s.Card>
       <s.ImageWrapper>
-        <s.Image src={image} alt={title} />
+        <s.Image src={capa} alt={titulo} />
         <s.CategoriesContainer>
-          {isHighlighted && (
+          {destacado && (
             <s.HighlightCategory>Destaque da semana</s.HighlightCategory>
           )}
-          {categories.map((category, index) => (
-            <s.Category key={index}>{category}</s.Category>
-          ))}
+          <s.Category>{tipo}</s.Category>
         </s.CategoriesContainer>
       </s.ImageWrapper>
       <s.CardContent>
         <s.HeaderContainer>
-          <s.Title>{title}</s.Title>
+          <s.Title>{titulo}</s.Title>
           <s.Rating>
-            <span>{rating}</span>
+            <span>{avaliacao}</span>
             <img src={Star} alt="Estrela" />
           </s.Rating>
         </s.HeaderContainer>
-        <s.Description>{description}</s.Description>
+        <s.Description>{descricao}</s.Description>
         <s.CardFooter>
           <button onClick={handleSaibaMaisClick}>Saiba mais</button>
         </s.CardFooter>

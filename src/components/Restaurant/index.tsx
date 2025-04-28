@@ -1,50 +1,54 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import * as S from "./styles";
-import {
-  Restaurant,
-  Product,
-  restaurantsDatabase,
-} from "../../data/restaurantsPages";
+import { Restaurant, MenuItem, getRestaurantById } from "../../services/api";
 import Header from "./Header";
 import Banner from "./Banner";
 import ProductsGrid from "./ProductsGrid";
+import Loading from "../Loading";
 
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
-  const [cart] = useState<{ product: Product; quantity: number }[]>([]);
+  const [cart] = useState<{ product: MenuItem; quantity: number }[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const restaurantId = parseInt(id || "1");
-      const foundRestaurant = restaurantsDatabase.find(
-        (r) => r.id === restaurantId
-      );
+    const fetchRestaurant = async () => {
+      try {
+        if (id) {
+          const data = await getRestaurantById(id);
+          setRestaurant(data);
+        }
+      } catch (error) {
+        console.error("Erro ao carregar restaurante:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      setRestaurant(foundRestaurant || restaurantsDatabase[0]);
-      setLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
+    fetchRestaurant();
   }, [id]);
 
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   if (loading) {
-    return <div>Carregando...</div>;
+    return <Loading />;
   }
 
   if (!restaurant) {
-    return <div>Restaurante não encontrado</div>;
+    return (
+      <S.ErrorContainer>
+        <S.ErrorMessage>Restaurante não encontrado</S.ErrorMessage>
+      </S.ErrorContainer>
+    );
   }
 
   return (
     <S.Container>
       <Header totalItems={totalItems} />
       <Banner restaurant={restaurant} />
-      <ProductsGrid products={restaurant.products} />
+      <ProductsGrid products={restaurant.cardapio} />
     </S.Container>
   );
 };
