@@ -71,7 +71,10 @@ export const Category = styled.span`
 `;
 
 export const HighlightCategory = styled(Category)`
-  width: 121px;
+  width: auto;
+  min-width: 121px;
+  padding: 6px 10px;
+  white-space: nowrap;
 `;
 
 export const CardContent = styled.div`
