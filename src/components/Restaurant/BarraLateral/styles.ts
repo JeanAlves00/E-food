@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { cores } from "../../../styles/GlobalStyles";
+import lixeira from "../../../assets/svg/lixeira.svg";
 
 export const Overlay = styled.div<{ $isOpen: boolean }>`
   position: fixed;
@@ -93,17 +94,17 @@ export const RemoveButton = styled.button`
   position: absolute;
   bottom: 8px;
   right: 8px;
-  background: transparent;
-  border: none;
-  color: ${cores.vermelho};
-  cursor: pointer;
   width: 16px;
   height: 16px;
+  background: url(${lixeira}) no-repeat center;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
   padding: 0;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const CartFooter = styled.div`

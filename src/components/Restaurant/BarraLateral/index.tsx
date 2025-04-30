@@ -43,9 +43,6 @@ const BarraLateral = ({
     <>
       <S.Overlay $isOpen={isOpen} onClick={onClose} />
       <S.SideBar $isOpen={isOpen}>
-        <S.CartHeader>
-          <S.CloseButton onClick={onClose}>&times;</S.CloseButton>
-        </S.CartHeader>
         <S.CartItems>
           {cartItems.map((item) => (
             <S.CartItem key={item.product.id}>
@@ -54,9 +51,10 @@ const BarraLateral = ({
                 <S.ItemTitle>{item.product.nome}</S.ItemTitle>
                 <S.ItemPrice>R$ {item.product.preco.toFixed(2)}</S.ItemPrice>
               </S.ItemInfo>
-              <S.RemoveButton onClick={() => onRemoveItem(item.product.id)}>
-                &times;
-              </S.RemoveButton>
+              <S.RemoveButton
+                onClick={() => onRemoveItem(item.product.id)}
+                aria-label="Remover item"
+              />
             </S.CartItem>
           ))}
         </S.CartItems>
