@@ -10,7 +10,9 @@ import Loading from "../Loading";
 const RestaurantDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
-  const [cart] = useState<{ product: MenuItem; quantity: number }[]>([]);
+  const [cart, setCart] = useState<{ product: MenuItem; quantity: number }[]>(
+    []
+  );
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,6 +32,30 @@ const RestaurantDetails: React.FC = () => {
     fetchRestaurant();
   }, [id]);
 
+  const handleAddToCart = (product: MenuItem) => {
+    setCart((prevCart) => {
+      const existingItem = prevCart.find(
+        (item) => item.product.id === product.id
+      );
+
+      if (existingItem) {
+        return prevCart.map((item) =>
+          item.product.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
+      }
+
+      return [...prevCart, { product, quantity: 1 }];
+    });
+  };
+
+  const handleRemoveFromCart = (productId: number) => {
+    setCart((prevCart) =>
+      prevCart.filter((item) => item.product.id !== productId)
+    );
+  };
+
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   if (loading) {
@@ -46,9 +72,16 @@ const RestaurantDetails: React.FC = () => {
 
   return (
     <S.Container>
-      <Header totalItems={totalItems} />
+      <Header
+        totalItems={totalItems}
+        cartItems={cart}
+        onRemoveItem={handleRemoveFromCart}
+      />
       <Banner restaurant={restaurant} />
-      <ProductsGrid products={restaurant.cardapio} />
+      <ProductsGrid
+        products={restaurant.cardapio}
+        onAddToCart={handleAddToCart}
+      />
     </S.Container>
   );
 };

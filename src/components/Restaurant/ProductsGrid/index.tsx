@@ -5,6 +5,7 @@ import Modal from "../Modal";
 
 interface ProductsGridProps {
   products: MenuItem[];
+  onAddToCart: (product: MenuItem) => void;
 }
 
 const truncateText = (text: string, limit: number) => {
@@ -15,7 +16,10 @@ const truncateText = (text: string, limit: number) => {
   return text;
 };
 
-const ProductsGrid: React.FC<ProductsGridProps> = ({ products }) => {
+const ProductsGrid: React.FC<ProductsGridProps> = ({
+  products,
+  onAddToCart,
+}) => {
   const [selectedProduct, setSelectedProduct] = useState<MenuItem | null>(null);
 
   return (
@@ -42,6 +46,7 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({ products }) => {
           item={selectedProduct}
           isOpen={!!selectedProduct}
           onClose={() => setSelectedProduct(null)}
+          onAddToCart={onAddToCart}
         />
       )}
     </>
