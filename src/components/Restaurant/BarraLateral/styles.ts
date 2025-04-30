@@ -16,16 +16,19 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
 export const SideBar = styled.aside<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
-  right: ${({ $isOpen }) => ($isOpen ? "0" : "-384px")};
-  width: 384px;
+  right: ${({ $isOpen }) => ($isOpen ? "0" : "-360px")};
+  width: 360px;
   height: 100vh;
   background-color: ${cores.vermelho};
   transition: right 0.3s ease-in-out;
   z-index: 1001;
   padding: 32px 8px;
+  display: flex;
+  flex-direction: column;
 
   @media (max-width: 768px) {
-    width: 320px;
+    width: 100%;
+    max-width: 360px;
   }
 `;
 
@@ -47,7 +50,7 @@ export const CloseButton = styled.button`
 export const CartItems = styled.div`
   max-height: calc(100vh - 250px);
   overflow-y: auto;
-  margin-bottom: 24px;
+  margin-bottom: 16px; // Reduzido para dar espaço ao footer
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -56,24 +59,26 @@ export const CartItems = styled.div`
 export const CartItem = styled.div`
   background-color: ${cores.pele};
   padding: 8px;
-  height: 96px;
-  border-radius: 4px;
+  height: 100px;
   display: flex;
   gap: 8px;
   position: relative;
+  margin-bottom: 16px;
 `;
 
 export const ItemImage = styled.img`
   width: 80px;
   height: 80px;
   object-fit: cover;
+  margin-top: 8px;
 `;
 
 export const ItemInfo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
+  padding-top: 8px;
 `;
 
 export const ItemTitle = styled.h3`
@@ -81,6 +86,7 @@ export const ItemTitle = styled.h3`
   color: ${cores.vermelho};
   font-weight: 900;
   font-family: "Roboto", sans-serif;
+  margin: 0;
 `;
 
 export const ItemPrice = styled.p`
@@ -88,6 +94,8 @@ export const ItemPrice = styled.p`
   color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
   line-height: 22px;
+  font-weight: 400;
+  margin: 0;
 `;
 
 export const RemoveButton = styled.button`
@@ -101,17 +109,12 @@ export const RemoveButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-
-  &:hover {
-    opacity: 0.8;
-  }
 `;
 
 export const CartFooter = styled.div`
-  position: absolute;
-  bottom: 32px;
-  left: 8px;
-  right: 8px;
+  width: 344px;
+  margin: 0 auto;
+  padding: 16px 0;
 `;
 
 export const TotalPrice = styled.div`
@@ -125,15 +128,17 @@ export const TotalPrice = styled.div`
 `;
 
 export const CheckoutButton = styled.button`
-  width: 100%;
+  width: 344px;
   height: 24px;
   background-color: ${cores.pele};
   color: ${cores.vermelho};
   border: none;
-  border-radius: 4px;
   font-size: 14px;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   cursor: pointer;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
