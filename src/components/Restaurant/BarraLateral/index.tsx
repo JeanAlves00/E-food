@@ -58,13 +58,11 @@ const BarraLateral = ({
             </S.CartItem>
           ))}
         </S.CartItems>
-        <S.CartFooter>
-          <S.TotalPrice>
-            <span>Valor total</span>
-            <span>R$ {calculateTotal().toFixed(2)}</span>
-          </S.TotalPrice>
-          <S.CheckoutButton>Continuar com a entrega</S.CheckoutButton>
-        </S.CartFooter>
+        <S.TotalPrice>
+          <span>Valor total</span>
+          <span>R$ {calculateTotal().toFixed(2)}</span>
+        </S.TotalPrice>
+        <S.CheckoutButton>Continuar com a entrega</S.CheckoutButton>
       </S.SideBar>
     </>
   );

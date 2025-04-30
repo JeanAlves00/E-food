@@ -16,19 +16,16 @@ export const Overlay = styled.div<{ $isOpen: boolean }>`
 export const SideBar = styled.aside<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
-  right: ${({ $isOpen }) => ($isOpen ? "0" : "-360px")};
-  width: 360px;
+  right: ${({ $isOpen }) => ($isOpen ? "0" : "-384px")};
+  width: 384px;
   height: 100vh;
   background-color: ${cores.vermelho};
   transition: right 0.3s ease-in-out;
   z-index: 1001;
   padding: 32px 8px;
-  display: flex;
-  flex-direction: column;
 
   @media (max-width: 768px) {
-    width: 100%;
-    max-width: 360px;
+    width: 320px;
   }
 `;
 
@@ -38,19 +35,10 @@ export const CartHeader = styled.div`
   margin-bottom: 24px;
 `;
 
-export const CloseButton = styled.button`
-  background: transparent;
-  border: none;
-  color: ${cores.branco};
-  font-size: 24px;
-  cursor: pointer;
-  padding: 8px;
-`;
-
 export const CartItems = styled.div`
   max-height: calc(100vh - 250px);
   overflow-y: auto;
-  margin-bottom: 16px; // Reduzido para dar espaço ao footer
+  margin-bottom: 24px;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -59,26 +47,23 @@ export const CartItems = styled.div`
 export const CartItem = styled.div`
   background-color: ${cores.pele};
   padding: 8px;
-  height: 100px;
+  height: 96px;
   display: flex;
   gap: 8px;
   position: relative;
-  margin-bottom: 16px;
 `;
 
 export const ItemImage = styled.img`
   width: 80px;
   height: 80px;
   object-fit: cover;
-  margin-top: 8px;
 `;
 
 export const ItemInfo = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding-top: 8px;
+  gap: 16px;
 `;
 
 export const ItemTitle = styled.h3`
@@ -86,7 +71,6 @@ export const ItemTitle = styled.h3`
   color: ${cores.vermelho};
   font-weight: 900;
   font-family: "Roboto", sans-serif;
-  margin: 0;
 `;
 
 export const ItemPrice = styled.p`
@@ -94,8 +78,6 @@ export const ItemPrice = styled.p`
   color: ${cores.vermelho};
   font-family: "Roboto", sans-serif;
   line-height: 22px;
-  font-weight: 400;
-  margin: 0;
 `;
 
 export const RemoveButton = styled.button`
@@ -109,12 +91,10 @@ export const RemoveButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 0;
-`;
 
-export const CartFooter = styled.div`
-  width: 344px;
-  margin: 0 auto;
-  padding: 16px 0;
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 export const TotalPrice = styled.div`
@@ -128,7 +108,7 @@ export const TotalPrice = styled.div`
 `;
 
 export const CheckoutButton = styled.button`
-  width: 344px;
+  width: 100%;
   height: 24px;
   background-color: ${cores.pele};
   color: ${cores.vermelho};
